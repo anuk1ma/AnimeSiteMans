@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог аниме</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>МирЗадроства</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="catalog.html" class="active">Каталог</a>
+            <a href="about.html">О сайте</a>
+        </nav>
+        <button id="themeBtn">Сменить тему</button>
+    </header>
+
+    <main>
+        <h2>Каталог аниме</h2>
+
+        <div class="filter">
+            <span>Фильтр:</span>
+            <button class="filter-btn active" data-genre="all">Все</button>
+            <button class="filter-btn" data-genre="action">Экшен</button>
+            <button class="filter-btn" data-genre="drama">Драма</button>
+            <button class="filter-btn" data-genre="mecha">Меха</button>
+        </div>
+
+        <div class="anime-list">
+            <div class="anime-card" data-genre="action">
+                <a href="https://animego.me/anime/kovboy-bibop-276"><h3>Ковбой Бибоп</h3></a>
+                <p class="year">1998</p>
+                <p class="desc">Космические охотники за головами путешествуют по галактике на корабле Бибоп. Стильный экшен с джазовым саундтреком.</p>
+                <span class="genre">Экшен</span>
+            </div>
+
+            <div class="anime-card" data-genre="mecha">
+                <h3>Евангелион</h3>
+                <p class="year">1995</p>
+                <p class="desc">Подростки управляют гигантскими роботами чтобы защитить человечество от ангелов. Психологическая драма и меха в одном флаконе.</p>
+                <span class="genre">Меха</span>
+            </div>
+
+            <div class="anime-card" data-genre="drama">
+                <h3>Добро пожаловать в N.H.K</h3>
+                <p class="year">2006</p>
+                <p class="desc">История хикикомори который пытается вернутся к нормальной жизни. Грустно и смешно одновременно.</p>
+                <span class="genre">Драма</span>
+            </div>
+
+            <div class="anime-card" data-genre="mecha">
+                <h3>Гуррен Лаганн</h3>
+                <p class="year">2007</p>
+                <p class="desc">Парень из подземной деревни находит робота и отправляется на поверхность. Эпичный меха с безумным масштабом.</p>
+                <span class="genre">Меха</span>
+            </div>
+
+            <div class="anime-card" data-genre="drama">
+                <h3>Форма Голоса</h3>
+                <p class="year">2016</p>
+                <p class="desc">История о буллинге, искуплении и прощении. Очень тяжелый но важный фильм.</p>
+                <span class="genre">Драма</span>
+            </div>
+
+            <div class="anime-card" data-genre="drama">
+                <h3>Твое имя</h3>
+                <p class="year">2016</p>
+                <p class="desc">Парень и девушка из разных мест меняются телами. Красивая романтическая история от Макото Синкая.</p>
+                <span class="genre">Драма</span>
+            </div>
+
+            <div class="anime-card" data-genre="action">
+                <h3>Сага о Винланде</h3>
+                <p class="year">2019</p>
+                <p class="desc">Молодой викинг жаждет мести за отца. Историческое аниме про викингов с отличной анимацией.</p>
+                <span class="genre">Экшен</span>
+            </div>
+
+            <div class="anime-card" data-genre="action">
+                <h3>Невероятное приключение ДжоДжо</h3>
+                <p class="year">2012</p>
+                <p class="desc">Сага о семье Джостаров которые сражаются со злом на протяжении поколений. Странное но затягивает.</p>
+                <span class="genre">Экшен</span>
+            </div>
+
+            <div class="anime-card" data-genre="drama">
+                <h3>Необьятный океан</h3>
+                <p class="year">2018</p>
+                <p class="desc">Девушки отправляются в экспедицию в Антарктику. История о дружбе и мечтах.</p>
+                <span class="genre">Драма</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>AniMans 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
