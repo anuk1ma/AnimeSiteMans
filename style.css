@@ -4,25 +4,28 @@
     box-sizing: border-box;
 }
 
+/* Светлая тема (по умолчанию) */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
     line-height: 1.6;
-    background: #f5f5f5;
-    color: #333;
+    background: #E0E0E0;
+    color: #121212;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* Темная тема */
 body.dark {
-    background: #1a1a2e;
-    color: #eee;
+    background: #121212;
+    color: #E0E0E0;
 }
 
 
 header {
-    background: #2c3e50;
-    color: white;
+    background: #1a1a1a;
+    color: #E0E0E0;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -30,8 +33,15 @@ header {
     gap: 20px;
 }
 
+body:not(.dark) header {
+    background: #2a2a2a;
+}
+
 header h1 {
     margin-right: auto;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
 }
 
 nav {
@@ -40,10 +50,12 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #E0E0E0;
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s;
 }
 
 nav a:hover {
@@ -51,20 +63,23 @@ nav a:hover {
 }
 
 nav a.active {
-    background: #3498db;
+    background: #D32F2F;
 }
 
 #themeBtn {
     padding: 8px 15px;
-    background: #e74c3c;
-    color: white;
+    background: #D32F2F;
+    color: #E0E0E0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    transition: background 0.3s;
 }
 
 #themeBtn:hover {
-    background: #c0392b;
+    background: #b71c1c;
 }
 
 
@@ -82,15 +97,17 @@ section {
 
 h2 {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #121212;
+    font-weight: 600;
 }
 
 body.dark h2 {
-    color: #3498db;
+    color: #D32F2F;
 }
 
 p {
     margin-bottom: 15px;
+    font-weight: 300;
 }
 
 ul {
@@ -100,10 +117,11 @@ ul {
 
 li {
     margin-bottom: 8px;
+    font-weight: 300;
 }
 
 a {
-    color: #3498db;
+    color: #D32F2F;
 }
 
 
@@ -114,34 +132,37 @@ a {
 }
 
 .card {
-    background: white;
+    background: #fafafa;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 body.dark .card {
-    background: #16213e;
+    background: #1e1e1e;
 }
 
 .card h3 {
-    color: #e74c3c;
+    color: #D32F2F;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .btn {
     display: inline-block;
-    background: #3498db;
-    color: white;
+    background: #D32F2F;
+    color: #E0E0E0;
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    font-weight: 500;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #2980b9;
-    color: white;
+    background: #b71c1c;
+    color: #E0E0E0;
 }
 
 
@@ -153,31 +174,44 @@ body.dark .card {
     align-items: center;
 }
 
+.filter span {
+    font-weight: 500;
+}
+
 .filter-btn {
     padding: 8px 16px;
-    border: 1px solid #3498db;
-    background: white;
-    color: #3498db;
+    border: 1px solid #D32F2F;
+    background: #fafafa;
+    color: #D32F2F;
     border-radius: 20px;
     cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 .filter-btn:hover {
-    background: #ecf0f1;
+    background: #f0f0f0;
 }
 
 .filter-btn.active {
-    background: #3498db;
-    color: white;
+    background: #D32F2F;
+    color: #E0E0E0;
 }
 
 body.dark .filter-btn {
-    background: #16213e;
-    border-color: #3498db;
+    background: #1e1e1e;
+    border-color: #D32F2F;
+    color: #D32F2F;
+}
+
+body.dark .filter-btn:hover {
+    background: #2a2a2a;
 }
 
 body.dark .filter-btn.active {
-    background: #3498db;
+    background: #D32F2F;
+    color: #E0E0E0;
 }
 
 
@@ -188,43 +222,88 @@ body.dark .filter-btn.active {
 }
 
 .anime-card {
-    background: white;
-    padding: 20px;
+    background: #fafafa;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.anime-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.anime-poster {
+    width: 120px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.anime-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 body.dark .anime-card {
-    background: #16213e;
+    background: #1e1e1e;
 }
 
 .anime-card h3 {
-    color: #2c3e50;
+    color: #121212;
     margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.anime-card a {
+    text-decoration: none;
+}
+
+.anime-card a:hover h3 {
+    color: #D32F2F;
 }
 
 body.dark .anime-card h3 {
-    color: #ecf0f1;
+    color: #E0E0E0;
+}
+
+body.dark .anime-card a:hover h3 {
+    color: #D32F2F;
 }
 
 .anime-card .year {
-    color: #7f8c8d;
+    color: #757575;
     font-size: 14px;
     margin-bottom: 10px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+body.dark .anime-card .year {
+    color: #9e9e9e;
 }
 
 .anime-card .desc {
     font-size: 14px;
     margin-bottom: 15px;
+    font-weight: 300;
 }
 
 .anime-card .genre {
     display: inline-block;
-    background: #3498db;
-    color: white;
+    background: #D32F2F;
+    color: #E0E0E0;
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 12px;
+    font-weight: 500;
+    margin-top: auto;
+    width: fit-content;
 }
 
 .anime-card.hidden {
@@ -233,11 +312,16 @@ body.dark .anime-card h3 {
 
 
 footer {
-    background: #2c3e50;
-    color: white;
+    background: #1a1a1a;
+    color: #E0E0E0;
     text-align: center;
     padding: 20px;
     margin-top: auto;
+    font-weight: 300;
+}
+
+body:not(.dark) footer {
+    background: #2a2a2a;
 }
 
 
@@ -262,6 +346,15 @@ footer {
 
     .cards {
         grid-template-columns: 1fr;
+    }
+
+    .anime-card {
+        flex-direction: row;
+    }
+
+    .anime-poster {
+        width: 100px;
+        height: 140px;
     }
 }
 
